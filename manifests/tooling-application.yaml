@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tooling
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: tooling
+  source:
+    path: manifests
+    repoURL: https://github.com/corest/argodemo-projects.git
+    targetRevision: demo
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: false
+      selfHeal: true

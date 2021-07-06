@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backup-jobs
+  namespace: argocd
+spec:
+  destination:
+    namespace: tooling
+    server: https://kubernetes.default.svc
+  project: workloads
+  source:
+    path: manifests/jobs
+    repoURL: https://github.com/corest/argodemo-project-backup-jobs.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: false
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backup-workflow
+  namespace: argocd
+spec:
+  destination:
+    namespace: argo
+    server: https://kubernetes.default.svc
+  project: workloads
+  source:
+    path: manifests/workflows
+    repoURL: https://github.com/corest/argodemo-project-backup-jobs.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: false
+      selfHeal: true

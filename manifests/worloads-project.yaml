@@ -1,0 +1,18 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: workloads
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  description: Tooling workloads
+  destinations:
+  - namespace: tooling
+    server: https://kubernetes.default.svc
+  - namespace: argo
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/corest/argodemo-project-backup-jobs.git
