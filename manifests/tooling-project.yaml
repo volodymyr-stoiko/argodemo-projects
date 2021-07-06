@@ -13,4 +13,4 @@ spec:
   - namespace: argocd
     server: https://kubernetes.default.svc
   sourceRepos:
-  - https://github.com/corest/argodemo-projects.git
+  - https://github.com/volodymyr-stoiko/argodemo-projects.git

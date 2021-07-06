@@ -10,8 +10,8 @@ spec:
   project: tooling
   source:
     path: manifests
-    repoURL: https://github.com/corest/argodemo-projects.git
-    targetRevision: demo
+    repoURL: https://github.com/volodymyr-stoiko/argodemo-projects.git
+    targetRevision: master
   syncPolicy:
     automated:
       allowEmpty: true

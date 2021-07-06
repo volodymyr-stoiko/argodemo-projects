@@ -10,9 +10,9 @@ spec:
     kind: '*'
   description: Tooling workloads
   destinations:
-  - namespace: tooling
+  - namespace: default
     server: https://kubernetes.default.svc
   - namespace: argo
     server: https://kubernetes.default.svc
   sourceRepos:
-  - https://github.com/corest/argodemo-project-backup-jobs.git
+  - https://github.com/volodymyr-stoiko/argodemo-workloads.git

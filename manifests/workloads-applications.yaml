@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: backup-jobs
+  name: jobs
   namespace: argocd
 spec:
   destination:
-    namespace: tooling
+    namespace: default
     server: https://kubernetes.default.svc
   project: workloads
   source:
     path: manifests/jobs
-    repoURL: https://github.com/corest/argodemo-project-backup-jobs.git
-    targetRevision: main
+    repoURL: https://github.com/volodymyr-stoiko/argodemo-workloads.git
+    targetRevision: master
   syncPolicy:
     automated:
       allowEmpty: true
@@ -21,7 +21,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: backup-workflow
+  name: workflows
   namespace: argocd
 spec:
   destination:
@@ -30,8 +30,8 @@ spec:
   project: workloads
   source:
     path: manifests/workflows
-    repoURL: https://github.com/corest/argodemo-project-backup-jobs.git
-    targetRevision: main
+    repoURL: https://github.com/volodymyr-stoiko/argodemo-workloads.git
+    targetRevision: master
   syncPolicy:
     automated:
       allowEmpty: true
