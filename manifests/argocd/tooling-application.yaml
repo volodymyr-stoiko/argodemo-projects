@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: tooling
   source:
-    path: manifests
+    path: manifests/argocd
     repoURL: https://github.com/volodymyr-stoiko/argodemo-projects.git
     targetRevision: master
   syncPolicy:
