@@ -1,10 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  creationTimestamp: "2021-07-07T12:52:21Z"
   name: argo-server-clusterworkflows
-  resourceVersion: "40410"
-  uid: b76d6f9c-287c-4355-a594-1990c4e96a6e
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
