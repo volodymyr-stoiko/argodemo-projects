@@ -16,3 +16,4 @@ spec:
     server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/volodymyr-stoiko/argodemo-workloads.git
+  - https://github.com/volodymyr-stoiko/argodemo-workloads2.git
